@@ -18,3 +18,5 @@ Scenario 3: (console.logging function before even function is written)
 Scenario 4: (calling function even before it is written)
 Scenario 5: (calling function even before it is written where it is assigned to a variable)
 Scenario 6: (calling function even before it is written where it is assigned to a variable)
+
+![mole](https://github.com/dev-rsiva/Javascript-Machine-Coding-Practice/assets/131841846/bc26c2c8-21d5-4c08-91d9-40f2ca0e92fd)
