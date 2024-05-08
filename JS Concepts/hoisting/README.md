@@ -21,4 +21,4 @@ Scenario 6: (calling function even before it is written where it is assigned to 
 
 ![mole](https://github.com/dev-rsiva/Javascript-Machine-Coding-Practice/assets/131841846/bc26c2c8-21d5-4c08-91d9-40f2ca0e92fd)
 
-![random image](../Planly-login-bg-image4.png)
+![random image](../Planly-login-bg-image4.jpg)
