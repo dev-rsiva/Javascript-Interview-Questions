@@ -121,23 +121,23 @@ b = 1000; //this gives us TypeError: Assignment to constant variable.
 
 **Uncaught ReferenceError: x is not defined at ...**
 
-    This Error signifies that x has never been in the scope of the program. This literally means that x was never defined/declared and is being tried to be accesed.
+This Error signifies that x has never been in the scope of the program. This literally means that x was never defined/declared and is being tried to be accesed.
 
 **Uncaught ReferenceError: cannot access 'a' before initialization**
 
-    This Error signifies that 'a' cannot be accessed because it is declared as 'let' and since it is not assigned a value, it is its Temporal Dead Zone. Thus, this error occurs.
+This Error signifies that 'a' cannot be accessed because it is declared as 'let' and since it is not assigned a value, it is its Temporal Dead Zone. Thus, this error occurs.
 
 **Uncaught SyntaxError: Identifier 'a' has already been declared**
 
-    This Error signifies that we are redeclaring a variable that is 'let' declared. No execution will take place.
+This Error signifies that we are redeclaring a variable that is 'let' declared. No execution will take place.
 
 **Uncaught SyntaxError: Missing initializer in const declaration**
 
-    This Error signifies that we haven't initialized or assigned value to a const declaration.
+This Error signifies that we haven't initialized or assigned value to a const declaration.
 
 **Uncaught TypeError: Assignment to constant variable**
 
-    This Error signifies that we are reassigning to a const variable.
+This Error signifies that we are reassigning to a const variable.
 
 **_SOME GOOD PRACTICES:_**
 
@@ -185,9 +185,9 @@ Whenever the function(inner function) is present inside another function(outer f
 
 This closure will form only when the variables are needed & it is present in the outer function environment(may first outer function or second outer function and etc..), the closure form only when the variables are required to the current function(inner function) are present in the any of the outer function environment. Otherwise, it will not form.
 
-    Why it is saved in the seperate memory space called closure rather attached to global or script?
+### Why it is saved in the seperate memory space called closure rather attached to global or script?
 
-    This is because, when a function(outer function) returns another function(inner function). Whenever the returned function is called later on, there will not be any outer environment exists for returned function. So, there is no way for this inner function to access the variables which required for its execution after returned from the outer function. So to store the required variables variables even after the the function completes its execution, we need seperate storage/component for remmeber and use it later for execution. So whenever any of the inner function is returned, that returned function will always take the required variables as a part of it and stored in a seperate memory space(Only required variables are stored in any outer function/lexical environment). This seperate storage is identified in chrome browser as "Closure outer function"(Eg. "Closure y"). This "Closure y" is an outer funtion(It means closure is a variable environment of the outer function). Another way of saying is, Closure is a function along with its lexical scope. A function along with reference to its outer environment together forms a closure. Or in other words, A Closure is a combination of a function and its lexical scope bundled together.]
+This is because, when a function(outer function) returns another function(inner function). Whenever the returned function is called later on, there will not be any outer environment exists for returned function. So, there is no way for this inner function to access the variables which required for its execution after returned from the outer function. So to store the required variables variables even after the the function completes its execution, we need seperate storage/component for remmeber and use it later for execution. So whenever any of the inner function is returned, that returned function will always take the required variables as a part of it and stored in a seperate memory space(Only required variables are stored in any outer function/lexical environment). This seperate storage is identified in chrome browser as "Closure outer function"(Eg. "Closure y"). This "Closure y" is an outer funtion(It means closure is a variable environment of the outer function). Another way of saying is, Closure is a function along with its lexical scope. A function along with reference to its outer environment together forms a closure. Or in other words, A Closure is a combination of a function and its lexical scope bundled together.]
 
 # What is Lexical Environment?
 
