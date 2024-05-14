@@ -332,3 +332,20 @@ console.log(authModule.getUsername()); // "siva"
 ![difference between the Encapsulation and Data Privacy](image-3.png)
 
 ![difference between the Encapsulation and Data Privacy](image-4.png)
+
+## Currying:
+
+Currying is a technique where a function that takes multiple arguments is transformed into a series of functions that take one argument each. It enables partial function application and enhances code flexibility.
+
+Example: Let's create a curried function to calculate the total price of items with tax.
+
+```javascript
+const calculateTotalPrice = (taxRate) => (price) =>
+  price + price * (taxRate / 100);
+
+const calculateSalesTax = calculateTotalPrice(8); // 8% sales tax
+const totalPrice = calculateSalesTax(100); // Price with tax
+console.log(totalPrice); // 108
+```
+
+### How not utilizing the closure will impact the currying functions?
