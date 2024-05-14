@@ -20,16 +20,17 @@ Call Stack maintains the order of execution of execution contexts. It is also kn
 
 # undefined:
 
--In first phase (memory allocation) JS assigns each variable a placeholder called undefined. undefined is when memory is allocated for the variable, but no value is assigned yet.
+In first phase (memory allocation) JS assigns each variable a placeholder called undefined. undefined is when memory is allocated for the variable, but no value is assigned yet.
 
 # not defined:
 
--If an object/variable is not even declared/found in memory allocation phase, and tried to access it then it is Not defined
+If an object/variable is not even declared/found in memory allocation phase, and tried to access it then it is Not defined
 
 # loosely typed / weakly typed:
 
--Javascript doesn't attach variables to any datatype. We can say var a = 5, and then change the value to boolean a = true or string a = 'hello' later on.
--Never assign undefined to a variable manually. Let it happen on it's own accord.
+Javascript doesn't attach variables to any datatype. We can say var a = 5, and then change the value to boolean a = true or string a = 'hello' later on.
+
+Never assign undefined to a variable manually. Let it happen on it's own accord.
 
 # Hoisting
 
