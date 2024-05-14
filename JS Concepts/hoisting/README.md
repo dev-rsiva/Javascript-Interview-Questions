@@ -237,34 +237,33 @@ function x() {
 var a = 20;
 }
 
-
 1. Module Design Pattern:
 
 The module design pattern allows us to encapsulate related functionality into a single module or file. It helps organize code, prevent global namespace pollution, and promotes reusability.
 
-Example: Suppose we're building a web application, and we want to create a module for handling user authentication. We can create a auth.js module that exports functions like login, logout, and getUserInfo.
+Example 1: Suppose we're building a web application, and we want to create a module for handling user authentication. We can create a auth.js module that exports functions like login, logout, and getUserInfo.
 
 function userAuthentication() {
-  let loggedInUser = "no user";
+let loggedInUser = "no user";
 
-  function login(username, password) {
-    //user auth is processing
-    loggedInUser = "siva";
-  }
+function login(username, password) {
+//user auth is processing
+loggedInUser = "siva";
+}
 
-  function logout() {
-    loggedInUser = null;
-  }
+function logout() {
+loggedInUser = null;
+}
 
-  function getUsername() {
-    return loggedInUser;
-  }
+function getUsername() {
+return loggedInUser;
+}
 
-  return {
-    login,
-    logout,
-    getUsername,
-  };
+return {
+login,
+logout,
+getUsername,
+};
 }
 
 const authModule = loginAuth();
@@ -273,7 +272,17 @@ authModule.login("siva", "secret");
 
 console.log(authModule.getUsername()); // "siva"
 
+Example 2:
 
- ![alt text](image.png)
+![alt text](image.png)
 
- ![alt text](image-1.png)
+Example 3:
+
+![alt text](image-2.png)
+
+Data Privacy:
+![alt text](image-1.png)
+
+What is the difference between the Encapsulation and Data Privacy?
+
+![alt text](image-3.png)
