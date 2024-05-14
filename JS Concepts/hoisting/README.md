@@ -281,6 +281,7 @@ Example 3:
 ![alt text](image-2.png)
 
 Data Privacy:
+
 ![alt text](image-1.png)
 
 What is the difference between the Encapsulation and Data Privacy?
