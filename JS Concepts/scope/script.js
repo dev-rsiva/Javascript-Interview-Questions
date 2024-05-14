@@ -1,3 +1,34 @@
+function userAuthentication() {
+  let loggedInUser = "no user";
+
+  function login(username, password) {
+    //user auth is processing
+    loggedInUser = "siva";
+  }
+
+  function logout() {
+    loggedInUser = null;
+  }
+
+  function getUsername() {
+    return loggedInUser;
+  }
+
+  return {
+    login,
+    logout,
+    getUsername,
+  };
+}
+
+const authModule = loginAuth();
+
+authModule.login("siva", "secret");
+
+console.log(authModule.getUsername()); // "siva"
+
+// _____________________________XXXXXXXXXXXXXXX_________________________________________
+
 // console.log(z());
 // var z = function() {
 //  return "Hello, world!";
@@ -13,31 +44,31 @@
 // console.log(a);
 // _____________________________XXXXXXXXXXXXXXX_________________________________________
 
-var rt = "rt";
+// var rt = "rt";
 
-var rv = "rv";
-function x() {
-  var j = 30;
-  console.log(rt);
-  var op = "op";
-  let pq = "pq";
-  var ru = "ru";
-  function r() {
-    var t = 0;
-    console.log(op);
-    console.log(ru);
-    console.log(pq);
-    function e() {
-      //   console.log(t);
-      console.log(j);
-      console.log(rv);
-    }
-    e();
-  }
-  r();
-}
+// var rv = "rv";
+// function x() {
+//   var j = 30;
+//   console.log(rt);
+//   var op = "op";
+//   let pq = "pq";
+//   var ru = "ru";
+//   function r() {
+//     var t = 0;
+//     console.log(op);
+//     console.log(ru);
+//     console.log(pq);
+//     function e() {
+//       //   console.log(t);
+//       console.log(j);
+//       console.log(rv);
+//     }
+//     e();
+//   }
+//   r();
+// }
 
-const z = x();
+// const z = x();
 
 // _____________________________XXXXXXXXXXXXXXX_________________________________________
 
