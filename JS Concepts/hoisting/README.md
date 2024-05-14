@@ -237,7 +237,7 @@ function x() {
 var a = 20;
 }
 
-1. Module Design Pattern:
+Module Design Pattern:
 
 The module design pattern allows us to encapsulate related functionality into a single module or file. It helps organize code, prevent global namespace pollution, and promotes reusability.
 
