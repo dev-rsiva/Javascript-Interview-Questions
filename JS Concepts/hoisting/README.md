@@ -327,7 +327,7 @@ console.log(authModule.getUsername()); // "siva"
 
 ![Data privacy](image-1.png)
 
-# What is the difference between the Encapsulation and Data Privacy?
+## What is the difference between the Encapsulation and Data Privacy?
 
 ![difference between the Encapsulation and Data Privacy](image-3.png)
 
@@ -454,15 +454,15 @@ showMessage("Hello, world!", 2000); // Display after 2 seconds
 
 ![alt text](image-11.png)
 
-## Disadvantages of Closure:
+# Disadvantages of Closure:
 
 - Over consumption of memory
 - Memory Leak
 - Freeze browser
 
-## setTimeout + Closures Interview Question
+# setTimeout + Closures Interview Question
 
-    Time, tide and Javascript wait for none.
+     Time, tide and Javascript wait for none.
 
 ```javascript
 function x() {
@@ -533,7 +533,7 @@ function x() {
 x();
 ```
 
-## Famous Interview Questions ft. Closures
+# Famous Interview Questions ft. Closures
 
 ### Q1: What is Closure in Javascript?
 
