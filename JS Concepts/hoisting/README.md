@@ -360,7 +360,7 @@ console.log(totalPrice); // 108
 
 - https://github.com/dev-rsiva/Javascript-Machine-Coding-Practice/blob/main/JS%20Concepts/hoisting/Closures%20impact%20on%20currying%20(1).pdf
 
-Answer:
+> Answer:
 
 ![alt text](image-5.png)
 ![alt text](image-6.png)
