@@ -352,15 +352,36 @@ console.log(totalPrice); // 108
 
 > ### Answer in image format:
 
+#### Part 1:
+
 - https://github.com/dev-rsiva/Javascript-Machine-Coding-Practice/blob/fc47a00ce7d9019b9531b96cd47dbf0f180f8685/JS%20Concepts/hoisting/image-5.png
 
 - https://github.com/dev-rsiva/Javascript-Machine-Coding-Practice/blob/fc47a00ce7d9019b9531b96cd47dbf0f180f8685/JS%20Concepts/hoisting/image-6.png
 
+#### Part 2:
+
+- https://github.com/dev-rsiva/Javascript-Machine-Coding-Practice/blob/main/JS%20Concepts/hoisting/image-7.png
+
+- https://github.com/dev-rsiva/Javascript-Machine-Coding-Practice/blob/main/JS%20Concepts/hoisting/image-8.png
+
 > ### Answer in pdf format:
+
+#### Part 1:
 
 - https://github.com/dev-rsiva/Javascript-Machine-Coding-Practice/blob/main/JS%20Concepts/hoisting/Closures%20impact%20on%20currying%20(1).pdf
 
-> Answer:
+#### Part 2:
+
+- https://github.com/dev-rsiva/Javascript-Machine-Coding-Practice/blob/main/JS%20Concepts/hoisting/Curry%20&%20Partial%20Function.pdf
+
+> ### Answer:
+
+### Answer(part-1):
 
 ![alt text](image-5.png)
 ![alt text](image-6.png)
+
+### Answer(part-2):
+
+![alt text](image-7.png)
+![alt text](image-8.png)
