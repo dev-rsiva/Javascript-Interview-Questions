@@ -349,3 +349,6 @@ console.log(totalPrice); // 108
 ```
 
 ### How not utilizing the closure will impact the currying functions?
+
+![alt text](image-5.png)
+![alt text](image-6.png)
