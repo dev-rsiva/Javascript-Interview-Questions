@@ -366,13 +366,13 @@ console.log(totalPrice); // 108
 
 > ### Answer in pdf format:
 
-    #### Part 1:
+#### Part 1:
 
-    - https://github.com/dev-rsiva/Javascript-Machine-Coding-Practice/blob/main/JS%20Concepts/hoisting/Closures%20impact%20on%20currying%20(1).pdf
+- https://github.com/dev-rsiva/Javascript-Machine-Coding-Practice/blob/main/JS%20Concepts/hoisting/Closures%20impact%20on%20currying%20(1).pdf
 
-    #### Part 2:
+#### Part 2:
 
-    - https://github.com/dev-rsiva/Javascript-Machine-Coding-Practice/blob/main/JS%20Concepts/hoisting/Curry%20&%20Partial%20Function.pdf
+- https://github.com/dev-rsiva/Javascript-Machine-Coding-Practice/blob/main/JS%20Concepts/hoisting/Curry%20&%20Partial%20Function.pdf
 
 > ### Answer:
 
@@ -385,3 +385,449 @@ console.log(totalPrice); // 108
 
 ![alt text](image-7.png)
 ![alt text](image-8.png)
+
+## Memoization:
+
+Memoization optimizes expensive function calls by caching their results. It's useful for recursive or repetitive computations.
+
+Example: Implement a memoized Fibonacci function.
+
+```javascript
+function fibonacci(n, memo = {}) {
+  if (n in memo) return memo[n];
+  if (n <= 1) return n;
+
+  memo[n] = fibonacci(n - 1, memo) + fibonacci(n - 2, memo);
+  return memo[n];
+}
+
+console.log(fibonacci(10)); // 55
+```
+
+## Data Hiding and Encapsulation with Class functionality:
+
+Encapsulation hides the internal details of an object and exposes only necessary methods and properties. It improves code maintainability and security.
+
+Example: Create a Person class with private properties.
+
+```javascript
+class Person {
+  #name; // Private field
+
+  constructor(name) {
+    this.#name = name;
+  }
+
+  getName() {
+    return this.#name;
+  }
+}
+
+const person = new Person("Alice");
+console.log(person.getName()); // 'Alice'
+// console.log(person.#name); // Error: Private field '#name' must be declared in an enclosing class
+```
+
+## setTimeouts:
+
+setTimeout allows scheduling a function to run after a specified delay. It's commonly used for asynchronous tasks, animations, and event handling.
+
+Example: Delayed message display.
+
+```javascript
+function showMessage(message, delay) {
+  setTimeout(() => {
+    console.log(message);
+  }, delay);
+}
+
+showMessage("Hello, world!", 2000); // Display after 2 seconds
+```
+
+![alt text](image-9.png)
+
+### Another example:
+
+![alt text](image-10.png)
+
+### Real world Scenario:
+
+![alt text](image-11.png)
+
+## Disadvantages of Closure:
+
+- Over consumption of memory
+- Memory Leak
+- Freeze browser
+
+## setTimeout + Closures Interview Question
+
+    Time, tide and Javascript wait for none.
+
+```javascript
+function x() {
+  var i = 1;
+  setTimeout(function () {
+    console.log(i);
+  }, 3000);
+  console.log("Namaste Javascript");
+}
+x();
+// Output:
+// Namaste Javascript
+// 1 // after waiting 3 seconds
+```
+
+- We expect JS to wait 3 sec, print 1 and then go down and print the string. But JS prints string immediately, waits 3 sec and then prints 1.
+
+- The function inside setTimeout forms a closure (remembers reference to i). So wherever function goes it carries this ref along with it.
+
+- setTimeout takes this callback function & attaches timer of 3000ms and stores it. Goes to next line without waiting and prints string.
+
+- After 3000ms runs out, JS takes function, puts it into call stack and runs it.
+
+- Q: Print 1 after 1 sec, 2 after 2 sec till 5 : Tricky interview question
+
+We assume this has a simple approach as below
+
+```javascript
+function x() {
+  for (var i = 1; i <= 5; i++) {
+    setTimeout(function () {
+      console.log(i);
+    }, i * 1000);
+  }
+  console.log("Namaste Javascript");
+}
+x();
+// Output:
+// Namaste Javascript
+// 6
+// 6
+// 6
+// 6
+// 6
+```
+
+Reason?
+
+- This happens because of closures. When setTimeout stores the function somewhere and attaches timer to it, the function remembers its reference to i, not value of i. All 5 copies of function point to same reference of i. JS stores these 5 functions, prints string and then comes back to the functions. By then the timer has run fully. And due to looping, the i value became 6. And when the callback fun runs the variable i = 6. So same 6 is printed in each log
+
+- To avoid this, we can use let instead of var as let has Block scope. For each iteration, the i is a new variable altogether(new copy of i). Everytime setTimeout is run, the inside function forms closure with new variable i
+
+- But what if interviewer ask us to implement using var?
+
+```javascript
+function x() {
+  for (var i = 1; i <= 5; i++) {
+    function close(i) {
+      setTimeout(function () {
+        console.log(i);
+      }, i * 1000);
+      // put the setT function inside new function close()
+    }
+    close(i); // everytime you call close(i) it creates new copy of i. Only this time, it is with var itself!
+  }
+  console.log("Namaste Javascript");
+}
+x();
+```
+
+## Famous Interview Questions ft. Closures
+
+### Q1: What is Closure in Javascript?
+
+Ans: A function along with reference to its outer environment together forms a closure. Or in other words, A Closure is a combination of a function and its lexical scope bundled together. eg:
+
+```javascript
+function outer() {
+  var a = 10;
+  function inner() {
+    console.log(a);
+  } // inner forms a closure with outer
+  return inner;
+}
+outer()(); // 10 // over here first `()` will return inner function and then using second `()` to call inner function
+```
+
+### Q2: Will the below code still forms a closure?
+
+```javascript
+function outer() {
+  function inner() {
+    console.log(a);
+  }
+  var a = 10;
+  return inner;
+}
+outer()(); // 10
+```
+
+Ans: Yes, because inner function forms a closure with its outer environment so sequence doesn't matter.
+
+### Q3: Changing var to let, will it make any difference?
+
+```javascript
+function outer() {
+  let a = 10;
+  function inner() {
+    console.log(a);
+  }
+  return inner;
+}
+outer()(); // 10
+```
+
+Ans: It will still behave the same way.
+
+### Q4: Will inner function have the access to outer function argument?
+
+```javascript
+function outer(str) {
+  let a = 10;
+  function inner() {
+    console.log(a, str);
+  }
+  return inner;
+}
+outer("Hello There")(); // 10 "Hello There"
+```
+
+Ans: Inner function will now form closure and will have access to both a and str.
+
+### Q5: In below code, will inner form closure with outest?
+
+```javascript
+function outest() {
+  var c = 20;
+  function outer(str) {
+    let a = 10;
+    function inner() {
+      console.log(a, c, str);
+    }
+    return inner;
+  }
+  return outer;
+}
+outest()("Hello There")(); // 10 20 "Hello There"
+```
+
+Ans: Yes, inner will have access to all its outer environment.
+
+### Q6: Output of below code and explaination?
+
+```javascript
+function outest() {
+  var c = 20;
+  function outer(str) {
+    let a = 10;
+    function inner() {
+      console.log(a, c, str);
+    }
+    return inner;
+  }
+  return outer;
+}
+let a = 100;
+outest()("Hello There")(); // 10 20 "Hello There"
+```
+
+Ans: Still the same output, the inner function will have reference to inner a, so conflicting name won't matter here. If it wouldn't have find a inside outer function then it would have went more outer to find a and thus have printed 100. So, it try to resolve variable in scope chain and if a wouldn't have been found it would have given reference error.
+
+### Q7: Advantage of Closure?
+
+- Module Design Pattern
+- Currying
+- Memoize
+- Data hiding and encapsulation
+- setTimeouts etc.
+
+### Q8: Discuss more on Data hiding and encapsulation?
+
+```javascript
+// without closures
+var count = 0;
+function increment(){
+  count++;
+}
+// in the above code, anyone can access count and change it.
+
+------------------------------------------------------------------
+
+// (with closures) -> put everything into a function
+function counter() {
+  var count = 0;
+  function increment(){
+    count++;
+  }
+}
+console.log(count); // this will give referenceError as count can't be accessed. So now we are able to achieve hiding of data
+
+------------------------------------------------------------------
+
+//(increment with function using closure) true function
+function counter() {
+  var count = 0;
+  return function increment(){
+    count++;
+    console.log(count);
+  }
+}
+var counter1 = counter(); //counter function has closure with count var.
+counter1(); // increments counter
+
+var counter2 = counter();
+counter2(); // here counter2 is whole new copy of counter function and it wont impack the output of counter1
+
+*************************
+
+// Above code is not good and scalable for say, when you plan to implement decrement counter at a later stage.
+// To address this issue, we use *constructors*
+
+// Adding decrement counter and refactoring code:
+function Counter() {
+//constructor function. Good coding would be to capitalize first letter of constructor function.
+  var count = 0;
+  this.incrementCounter = function() { //anonymous function
+    count++;
+    console.log(count);
+  }
+   this.decrementCounter = function() {
+    count--;
+    console.log(count);
+  }
+}
+
+var counter1 = new Counter();  // new keyword for constructor fun
+counter1.incrementCounter();
+counter1.incrementCounter();
+counter1.decrementCounter();
+// returns 1 2 1
+```
+
+### Q9: Disadvantage of closure?
+
+Ans: Overconsumption of memory when using closure as everytime as those closed over variables are not garbage collected till program expires. So when creating many closures, more memory is accumulated and this can create memory leaks if not handled.
+
+**Garbage collector** : Program in JS engine or browser that frees up unused memory. In highlevel languages like C++ or JAVA, garbage collection is left to the programmer, but in JS engine its done implicitly.
+
+```javascript
+function a() {
+  var x = 0;
+  return function b() {
+    console.log(x);
+  };
+}
+
+var y = a(); // y is a copy of b()
+y();
+
+// Once a() is called, its element x should be garbage collected ideally. But fun b has closure over var x. So mem of x cannot be freed. Like this if more closures formed, it becomes an issue. To tacke this, JS engines like v8 and Chrome have smart garbage collection mechanisms. Say we have var x = 0, z = 10 in above code. When console log happens, x is printed as 0 but z is removed automatically.
+```
+
+## First Class Functions ft. Anonymous Functions
+
+    Functions are heart ♥ of Javascript.
+
+### Q: What is Function statement?
+
+Below way of creating function are function statement.
+
+```javascript
+function a() {
+  console.log("Hello");
+}
+a(); // Hello
+```
+
+### Q: What is Function Expression?
+
+Assigning a function to a variable. Function acts like a value.
+
+```javascript
+var b = function () {
+  console.log("Hello");
+};
+b();
+```
+
+### Q: Difference between function statement and expression
+
+The major difference between these two lies in Hoisting.
+
+```javascript
+a(); // "Hello A"
+b(); // TypeError
+function a() {
+  console.log("Hello A");
+}
+var b = function () {
+  console.log("Hello B");
+};
+// Why? During mem creation phase a is created in memory and function assigned to a. But b is created like a variable (b:undefined) and until code reaches the function()  part, it is still undefined. So it cannot be called.
+```
+
+### Q: What is Function Declaration?
+
+Other name for function statement.
+
+### Q: What is Anonymous Function?
+
+A function without a name.
+
+```javascript
+function () {
+
+}// this is going to throw Syntax Error - Function Statement requires function name.
+```
+
+- They don't have their own identity. So an anonymous function without code inside it results in an error.
+
+- Anonymous functions are used when functions are used as values eg. the code sample for function expression above.
+
+### Q: What is Named Function Expression?
+
+Same as Function Expression but function has a name instead of being anonymous.
+
+```javascript
+var b = function xyz() {
+  console.log("b called");
+};
+b(); // "b called"
+xyz(); // Throws ReferenceError:xyz is not defined.
+// xyz function is not created in global scope. So it can't be called.
+```
+
+### Q: Parameters vs Arguments?
+
+```javascript
+var b = function (param1, param2) {
+  // labels/identifiers are parameters
+  console.log("b called");
+};
+b(arg1, arg2); // arguments - values passed inside function call
+```
+
+### Q: What is First Class Function aka First Class Citizens?
+
+We can pass functions inside a function as arguments and /or return a function(HOF). These ability are altogether known as First class function. It is programming concept available in some other languages too.
+
+```javascript
+var b = function (param1) {
+  console.log(param1); // prints " f() {} "
+};
+b(function () {});
+
+// Other way of doing the same thing:
+var b = function (param1) {
+  console.log(param1);
+};
+function xyz() {}
+b(xyz); // same thing as prev code
+
+// we can return a function from a function:
+var b = function (param1) {
+  return function () {};
+};
+console.log(b()); //we log the entire fun within b.
+```
