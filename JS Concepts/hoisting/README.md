@@ -352,3 +352,7 @@ console.log(totalPrice); // 108
 
 ![alt text](image-5.png)
 ![alt text](image-6.png)
+
+### title
+
+[text](<../../../../../../../../Users/Admin/Downloads/Closures impact on currying (1).pdf>)
