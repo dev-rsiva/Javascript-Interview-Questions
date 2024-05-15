@@ -355,4 +355,6 @@ console.log(totalPrice); // 108
 
 ### title
 
-[text](<../../../../../../../../Users/Admin/Downloads/Closures impact on currying (1).pdf>)
+[text](<C:\Local Disk D\Full stack\Working file\Javascript\Ready To Practice\Javascript-interview-questions\JS Concepts\hoisting\Closures impact on currying (1).pdf>)
+
+[embed][JS Concepts\hoisting\Closures impact on currying (1).pdf](https://github.com/dev-rsiva/Javascript-Machine-Coding-Practice/blob/main/JS%20Concepts/hoisting/Closures%20impact%20on%20currying%20(1).pdf)[/embed]
