@@ -366,13 +366,13 @@ console.log(totalPrice); // 108
 
 > ### Answer in pdf format:
 
-#### Part 1:
+    #### Part 1:
 
-- https://github.com/dev-rsiva/Javascript-Machine-Coding-Practice/blob/main/JS%20Concepts/hoisting/Closures%20impact%20on%20currying%20(1).pdf
+    - https://github.com/dev-rsiva/Javascript-Machine-Coding-Practice/blob/main/JS%20Concepts/hoisting/Closures%20impact%20on%20currying%20(1).pdf
 
-#### Part 2:
+    #### Part 2:
 
-- https://github.com/dev-rsiva/Javascript-Machine-Coding-Practice/blob/main/JS%20Concepts/hoisting/Curry%20&%20Partial%20Function.pdf
+    - https://github.com/dev-rsiva/Javascript-Machine-Coding-Practice/blob/main/JS%20Concepts/hoisting/Curry%20&%20Partial%20Function.pdf
 
 > ### Answer:
 
