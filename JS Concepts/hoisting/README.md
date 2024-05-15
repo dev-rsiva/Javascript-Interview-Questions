@@ -350,13 +350,13 @@ console.log(totalPrice); // 108
 
 ### How not utilizing the closure will impact the currying functions?
 
-> Answer in image format:
+> ### Answer in image format:
 
 - https://github.com/dev-rsiva/Javascript-Machine-Coding-Practice/blob/fc47a00ce7d9019b9531b96cd47dbf0f180f8685/JS%20Concepts/hoisting/image-5.png
 
 - https://github.com/dev-rsiva/Javascript-Machine-Coding-Practice/blob/fc47a00ce7d9019b9531b96cd47dbf0f180f8685/JS%20Concepts/hoisting/image-6.png
 
-> Answer in pdf format:
+> ### Answer in pdf format:
 
 - https://github.com/dev-rsiva/Javascript-Machine-Coding-Practice/blob/main/JS%20Concepts/hoisting/Closures%20impact%20on%20currying%20(1).pdf
 
